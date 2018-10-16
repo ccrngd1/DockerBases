@@ -1,0 +1,7 @@
+groups:
+- name: auth_down
+  rules:
+  - alert: devAuthDown
+  expr: avg by(job) (up{job="auth_dev_ssr"}) < .9
+  annotations:
+   summary: Some instances of Dev Auth service are down
