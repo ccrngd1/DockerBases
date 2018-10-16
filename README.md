@@ -22,3 +22,12 @@ to run:
 cd prometheusDocker
 docker build -t prom:latest .
 docker run -it -p 9090:9090 -p 3000:3000 prom:latest
+
+
+#dotnetcoreDocker
+cd HelloWorld
+
+dotnet publish -c Release -o obj/Docker/publish 
+
+docker build -t hw:latest .
+docker run -it hw:latest
